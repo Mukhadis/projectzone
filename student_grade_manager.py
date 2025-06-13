@@ -1,6 +1,7 @@
 # This is a simple programme that records student names and their associated grades, aswell as the class average
 school_class = []
 
+
 def student_tracker():
     total = 0
     count = 0
@@ -9,20 +10,24 @@ def student_tracker():
     size = input("How many students are in the class? ")
     print("\n")
 
+    # Append the names and grades onto a list
     while count < int(size):
         names = input(f"What is the name of the student {count + 1}? ")
         grade = int(input("What was their grade? "))
         print("\n")
-        school_class.append({"names": names, "grade" : grade})
+        school_class.append({"names": names, "grade": grade})
         count = count + 1
 
+    # Print the names and grades onto the screen
     for e in school_class:
         print(f"{e['names']} - {e['grade']}")
 
+    # Iterate through the grades, add them together and get the average
     for e in school_class:
         total += e['grade']
-        average_grade = total/ count
+        average_grade = total / count
     print("the average grade is ", average_grade)
+
 
 if __name__ == "__main__":
 
